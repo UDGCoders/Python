@@ -6,3 +6,4 @@ if not os.path.exists(folder_name):
     print(f"folder {folder_name} has been created: ")
 else:
     print(f"{folder_name} alreaady exists")
+    
