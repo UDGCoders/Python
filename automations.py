@@ -36,7 +36,9 @@ for filename in os.listdir(source_dir):
         # print("image found")
         images=os.path.join(source_dir,"images/jpg")
         os.makedirs(images,exist_ok=True)
-        
+        shutil.move(os.path.join(source_dir,filename),os.path.join(images,filename))
+    elif filename.endswith("png"):
+        images=os.path.join(source_dir,"images/png")
         shutil.move(os.path.join(source_dir,filename),os.path.join(images,filename))
     elif filename.endswith("zip"):
         images=os.path.join(source_dir,"zip")
