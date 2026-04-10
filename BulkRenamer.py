@@ -14,5 +14,3 @@ for filename in os.listdir(source_dir):
         os.replace(old_path,new_path)
         print(f"{filename} is replaced")
         counter = counter+1
-    else:
-        print("no file found")
