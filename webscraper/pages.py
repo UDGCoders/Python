@@ -13,6 +13,14 @@ for page in range(1,6):
         
     soup=BeautifulSoup(response.content,'html.parser')
 
-    qoutes=soup.find_all('h2',class_='qoute')
+    qoutes=soup.find_all('div',class_='quote')
 
-    # with 
+    with open('files/looop.csv','w',newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['Qoute','Author'])
+        for item in qoutes:
+            # print(item)
+            author=soup.find('small',class_='author').text.strip()
+            quote=soup.find('span',class_='text').text.strip()
+            writer.writerow([quote,author])
+        writer.writerow(['data wrriten'])
