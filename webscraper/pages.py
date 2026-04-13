@@ -15,4 +15,4 @@ for page in range(1,6):
 
     qoutes=soup.find_all('h2',class_='qoute')
 
-    with 
+    # with 
