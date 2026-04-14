@@ -11,7 +11,13 @@ class Warehouse():
         self.inventory=[]
         
     def add_product(self,product):
-        self.inventory.append(product)
+
+        
+            for check in self.inventory:
+                if check == product:
+                    print("Product Already Exists")
+                    return
+            self.inventory.append(product)
 
     def get_total_value(self):
         
