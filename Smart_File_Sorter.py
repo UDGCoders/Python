@@ -4,18 +4,19 @@ import shutil
 source_dir=input("Enter the directory path:  ")
 
 file_type={
-    "images/jpeg":".jpeg",
-    "images/png":".png",
-    "images/jpg":".jpg",
-    "zipped":".zip",
-    "text":".txt",
-    "pdf":".pdf",
+    "images/jpeg":[".jpeg",'.jpg','.png'],
+    # "images/png":".png",
+    # "images/jpg":".jpg",
+    "zipped":[".zip"],
+    "text":[".txt"],
+    "pdf":[".pdf"],
 
 }
 
-moved_files = 0
+moved_files = False
 moved_files_list=[]
-# flag= False
+count = 0
+summary={}
 
 
 for filename in os.listdir(source_dir):
@@ -33,6 +34,10 @@ for filename in os.listdir(source_dir):
             moved_files_list.append(value)
             print(f"{moved_files} of type {value} has been moved to {key}")
             break
+
+        if not moved_files:
+            other_path = os.path.join(source_dir,'Others')
+            count = count+1
+            shutil.move(full_path,os.path.join(other_path,filename))
             
-if moved_files == 0:
-    print("no file has been moved")
+# for folder,counts

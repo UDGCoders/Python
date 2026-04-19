@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 
 site_link='https://quotes.toscrape.com/'
-print('coneecting')
+print('connecting')
 response = requests.get(site_link)
 if response.status_code == 200:
     print('connected to site')
