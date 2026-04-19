@@ -19,7 +19,7 @@ qoutes_list=[]
 author_list=[]
 # titles=soup.find_all('h2')
 qoutes = soup.find_all('span',class_='text')
-author = soup.find_all('small',class_='author',itemdrop='author')
+author = soup.find_all('small',class_='author',itemprop='author')
 
 # for item in titles:
     # data_list.append(item.text.strip())
